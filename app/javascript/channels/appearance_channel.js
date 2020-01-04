@@ -15,10 +15,11 @@ consumer.subscriptions.create("AppearanceChannel", {
       console.log(data['user_id']);
       var dot = document.getElementById("js-appearance" + data['user_id']);
       var camera_icon = document.getElementById("js-camera-icon" + data['user_id']);
-      if (dot != null && camera_icon != null) { // This values are null for the current_user
+      if (dot !== null && camera_icon !== null) { // This values are null for the current_user
         dot.classList.remove("offline");
         dot.classList.add("online");
         camera_icon.classList.remove("offline");
+        camera_icon.classList.add("online");
       }
       console.log(dot);
       
