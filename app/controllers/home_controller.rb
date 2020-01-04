@@ -18,4 +18,14 @@ class HomeController < ApplicationController
         format.js
     end
   end
+  
+  private 
+
+  def broadcast_change_to_users(state)
+      ActionCable.server.broadcast(
+          "appearance",
+          state: state,
+          user_id: current_user.id
+      )
+  end
 end
